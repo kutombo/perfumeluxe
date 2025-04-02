@@ -243,23 +243,23 @@
         .details-title {
             font-size: 1.8rem;
             color: #2c3e50;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 15px;
             border-bottom: 2px solid #eee;
             text-align: center;
             position: relative;
         }
 
         .details-title:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-}
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
         
         .details-table {
             width: 100%;
@@ -344,6 +344,9 @@
             .details-title {
                 font-size: 1.5rem;
             }
+            .feature-card {
+                padding: 1.5rem;
+            }
         }
         .product-features {
             margin-top: 3rem;
@@ -353,6 +356,7 @@
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.05);
             animation: fadeIn 0.6s ease-out 3.0s forwards;
+            width: 100%;
         }
 
         .features-grid {
@@ -364,22 +368,36 @@
 
         .feature-card {
             background: #f8f9fa;
-            border-radius: 8px;
-            padding: 1.5rem;
+            border-radius: 10px;
+            padding: 2rem;
             text-align: center;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             border: 1px solid #e0e0e0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: white;
+            border-color: transparent;
         }
 
         .feature-icon {
             font-size: 2.5rem;
             color: #6e48aa;
             margin-bottom: 1.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(42, 82, 152, 0.1);
+            border-radius: 50%;
         }
 
         .feature-title {
@@ -393,6 +411,7 @@
             color: #3b4146;
             font-size: 1rem;
             line-height: 1.6;
+            margin: 0;
         }
         .back-button {
             display: inline-block;
@@ -405,6 +424,28 @@
             font-weight: bold;
             transition: background-color 0.3s;
         }
+        .fragrance-characteristics {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+
+        .fragrance-characteristics table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .fragrance-characteristics td {
+            padding: 12px 15px;
+            vertical-align: middle;
+        }
+
+        .fragrance-characteristics tr:not(:last-child) td {
+            border-bottom: 1px solid #eee;
+        }
+
     </style>
 </head>
 <body>
