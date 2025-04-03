@@ -15,19 +15,35 @@
         }
         
         body {
-            background-color: #f8f9fa;
+            background-image: url('bp.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
             color: #333;
             line-height: 1.6;
-            opacity: 0;
-            animation: fadeIn 0.8s ease-out forwards;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            min-height: 100v
         }
         
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.3); /* Dostosuj przezroczystość (0.8-0.9) */
+            z-index: -1;
+        }
+
         @keyframes fadeIn {
             to { opacity: 1; }
         }
         
         header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg,#6a9be6 0%, #3561ad 50%, #6a9be6 100%);
             color: white;
             padding: 1.5rem;
             text-align: center;
@@ -96,17 +112,19 @@
         }
         
         .product-image-container {
-            flex: 1;
             background: #f1f1f1;
             border-radius: 8px;
-            padding: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
             opacity: 0;
             transform: scale(0.9);
             animation: zoomIn 0.8s ease-out 0.8s forwards;
+            flex: 1.5; 
+            padding: 3rem; 
         }
+
+        
         
         @keyframes zoomIn {
             to {
@@ -116,14 +134,15 @@
         }
         
         .product-image {
-            max-width: 100%;
-            max-height: 1000px;
+            width: 100%; 
+            max-height: none; 
             object-fit: contain;
-            transition: transform 0.5s ease;
+            border-radius: 8px;
+            transform: scale(1.35);
         }
         
         .product-image:hover {
-            transform: scale(1.05);
+            transform: scale(1.5);
         }
         
         .product-info {
@@ -241,11 +260,24 @@
         }
         
         .details-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #2c3e50;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 15px;
             border-bottom: 2px solid #eee;
+            text-align: center;
+            position: relative;
+        }
+
+        .details-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
         }
         
         .details-table {
@@ -313,6 +345,147 @@
             to { opacity: 0; }
         }
         
+        .fragrance-characteristics {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out 3.4s forwards;
+        }
+        
+        .fragrance-characteristics table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+        
+        .fragrance-characteristics tr:not(:last-child) td {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .fragrance-characteristics td {
+            padding: 12px 15px;
+            vertical-align: middle;
+        }
+        
+        .characteristic-name {
+            font-weight: bold;
+            color: #2c3e50;
+            width: 30%;
+        }
+        
+        .characteristic-bar {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .bar-container {
+            width: 80%;
+            background: #f1f1f1;
+            height: 10px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        
+        .bar {
+            height: 100%;
+            border-radius: 5px;
+        }
+        
+        .bar-value {
+            font-weight: bold;
+            min-width: 40px;
+            text-align: right;
+        }
+        
+        .product-features {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out 3.0s forwards;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: white;
+            border-color: transparent;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #2a5298;
+            margin-bottom: 1rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(42, 82, 152, 0.1);
+            border-radius: 50%;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+        
+        .feature-desc {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: #e0e0e0;
+        }
+        
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
             .product-header {
                 flex-direction: column;
@@ -325,60 +498,26 @@
             .product-image-container {
                 margin-bottom: 2rem;
             }
-        }
-        /* Nowe sekcje */
-        .product-features {
-            margin-top: 3rem;
-            opacity: 0;
-            animation: fadeIn 0.6s ease-out 3.0s forwards;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .feature-card {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-            color: #6e48aa;
-            margin-bottom: 1rem;
-        }
-
-        .feature-title {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-
-        .feature-desc {
-            color: #3b4146;
-            font-size: 0.9rem;
-        }
-        .back-button {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .details-title {
+                font-size: 1.5rem;
+            }
+            
+            .fragrance-characteristics table {
+                display: block;
+                overflow-x: auto;
+            }
+            .product-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            body::before {
+                background: rgba(255, 255, 255, 0.92); /* Mniej przezroczyste na mobile */
+            }
         }
     </style>
 </head>

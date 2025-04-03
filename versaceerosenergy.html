@@ -6,7 +6,7 @@
     <title>VERSACE EROS ENERGY EDP | Perfume Luxe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="p.jpg">
-<style>
+    <style>
         * {
             box-sizing: border-box;
             margin: 0;
@@ -15,19 +15,35 @@
         }
         
         body {
-            background-color: #f8f9fa;
+            background-image: url('bp.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
             color: #333;
             line-height: 1.6;
-            opacity: 0;
-            animation: fadeIn 0.8s ease-out forwards;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            min-height: 100v
         }
         
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.3); /* Dostosuj przezroczystość (0.8-0.9) */
+            z-index: -1;
+        }
+
         @keyframes fadeIn {
             to { opacity: 1; }
         }
         
         header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg,#6a9be6 0%, #3561ad 50%, #6a9be6 100%);
             color: white;
             padding: 1.5rem;
             text-align: center;
@@ -96,17 +112,19 @@
         }
         
         .product-image-container {
-            flex: 1;
             background: #f1f1f1;
             border-radius: 8px;
-            padding: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
             opacity: 0;
             transform: scale(0.9);
             animation: zoomIn 0.8s ease-out 0.8s forwards;
+            flex: 1.5; 
+            padding: 3rem; 
         }
+
+        
         
         @keyframes zoomIn {
             to {
@@ -116,14 +134,15 @@
         }
         
         .product-image {
-            max-width: 100%;
-            max-height: 1000px;
+            width: 100%; 
+            max-height: none; 
             object-fit: contain;
-            transition: transform 0.5s ease;
+            border-radius: 8px;
+            transform: scale(0.55);
         }
         
         .product-image:hover {
-            transform: scale(1.05);
+            transform: scale(0.65);
         }
         
         .product-info {
@@ -326,7 +345,6 @@
             to { opacity: 0; }
         }
         
-        /* Sekcja charakterystyki zapachu */
         .fragrance-characteristics {
             margin-top: 3rem;
             padding: 2rem;
@@ -383,7 +401,6 @@
             text-align: right;
         }
         
-        /* Sekcja "Dlaczego pokochasz ten zapach" */
         .product-features {
             margin-top: 3rem;
             padding: 2rem;
@@ -494,6 +511,13 @@
                 display: block;
                 overflow-x: auto;
             }
+            .product-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            body::before {
+                background: rgba(255, 255, 255, 0.92); /* Mniej przezroczyste na mobile */
+            }
         }
     </style>
 </head>
@@ -503,7 +527,7 @@
     <header>
         <h1><i class="fas fa-spray-can"></i> Perfume Luxe</h1>
     </header>
-
+    
     <div class="navigation">
         <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Powrót do sklepu</a>
     </div>
@@ -511,15 +535,13 @@
     <div class="product-container">
         <div class="product-header">
             <div class="product-image-container">
-                <img src="versaceeros.jpg" alt="VERSACE EROS EDP" class="product-image">
+                <img src="versaceerosenergy.jpg" alt="VERSACE EROS ENERGY EDP" class="product-image">
             </div>
             <div class="product-info">
-                <h1 class="product-title">VERSACE EROS EAU DE PARFUM</h1>
-                <p class="product-brand">Versace</p>
+                <h1 class="product-title">VERSACE EROS ENERGY EDP</h1>
+                <p class="product-brand">VERSACE</p>
                 <p class="product-description">
-                    Męska kompozycja zapachowa Versace Eros to połączenie świeżości i zmysłowości. 
-                    Górne nuty mięty, zielonego jabłka i cytryny przechodzą w serię wanilii, 
-                    tonka i drzewa cedrowego, tworząc intensywny, uwodzicielski zapach.
+                    Energetyczna i uwodzicielska interpretacja kultowego zapachu. Versace Eros Energy to połączenie świeżości z głębią, stworzone dla mężczyzn pełnych pasji i determinacji. Wyrazista kompozycja, która dodaje pewności siebie i przyciąga spojrzenia.
                 </p>
                 
                 <div class="size-options">
@@ -549,112 +571,112 @@
                 </tr>
                 <tr>
                     <td class="details-label">Nuty głowy:</td>
-                    <td>Mięta, zielone jabłko, cytryna, mandarin</td>
+                    <td>Bergamotka, czerwona pomarańcza, owoce jałowca</td>
                 </tr>
                 <tr>
                     <td class="details-label">Nuty serca:</td>
-                    <td>Ambroksan, geranium, tonka</td>
+                    <td>Ambroksan, kardamon, nuty wodne</td>
                 </tr>
                 <tr>
                     <td class="details-label">Nuty bazy:</td>
-                    <td>Drzewo sandałowe, paczula, mech dębowy, wanilia</td>
+                    <td>Wetiwer, drzewo guajakowe, bursztyn</td>
                 </tr>
                 <tr>
                     <td class="details-label">Typ:</td>
                     <td>Eau de Parfum</td>
                 </tr>
             </table>
-        </div>
-        
-        <div class="fragrance-characteristics">
-            <h2 class="details-title">Charakterystyka zapachu</h2>
-            <table>
-                <tr>
-                    <td class="characteristic-name">Słodycz</td>
-                    <td>
-                        <div class="characteristic-bar">
-                            <div class="bar-container">
-                                <div class="bar" style="width: 80%; background: #e74c3c;"></div>
+            <div class="fragrance-characteristics" style="margin-top: 3rem; opacity: 0; animation: fadeIn 0.6s ease-out 3.4s forwards;">
+                <h2 class="details-title">Charakterystyka zapachu</h2>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem;">
+                    <tr>
+                        <td style="padding: 12px 15px; border-bottom: 1px solid #eee; width: 30%; font-weight: bold;">Słodycz</td>
+                        <td style="padding: 12px 15px; border-bottom: 1px solid #eee; width: 70%;">
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 80%; background: #f1f1f1; height: 10px; border-radius: 5px;">
+                                    <div style="width: 70%; height: 100%; background: #e74c3c; border-radius: 5px;"></div>
+                                </div>
+                                <span style="margin-left: 10px; color: #e74c3c; font-weight: bold;">7/10</span>
                             </div>
-                            <span class="bar-value" style="color: #e74c3c;">8/10</span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="characteristic-name">Gorycz</td>
-                    <td>
-                        <div class="characteristic-bar">
-                            <div class="bar-container">
-                                <div class="bar" style="width: 60%; background: #3498db;"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px 15px; border-bottom: 1px solid #eee; font-weight: bold;">Gorycz</td>
+                        <td style="padding: 12px 15px; border-bottom: 1px solid #eee;">
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 80%; background: #f1f1f1; height: 10px; border-radius: 5px;">
+                                    <div style="width: 50%; height: 100%; background: #3498db; border-radius: 5px;"></div>
+                                </div>
+                                <span style="margin-left: 10px; color: #3498db; font-weight: bold;">5/10</span>
                             </div>
-                            <span class="bar-value" style="color: #3498db;">6/10</span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="characteristic-name">Świeżość</td>
-                    <td>
-                        <div class="characteristic-bar">
-                            <div class="bar-container">
-                                <div class="bar" style="width: 70%; background: #2ecc71;"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px 15px; border-bottom: 1px solid #eee; font-weight: bold;">Świeżość</td>
+                        <td style="padding: 12px 15px; border-bottom: 1px solid #eee;">
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 80%; background: #f1f1f1; height: 10px; border-radius: 5px;">
+                                    <div style="width: 80%; height: 100%; background: #2ecc71; border-radius: 5px;"></div>
+                                </div>
+                                <span style="margin-left: 10px; color: #2ecc71; font-weight: bold;">8/10</span>
                             </div>
-                            <span class="bar-value" style="color: #2ecc71;">7/10</span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="characteristic-name">Intensywność</td>
-                    <td>
-                        <div class="characteristic-bar">
-                            <div class="bar-container">
-                                <div class="bar" style="width: 90%; background: #9b59b6;"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px 15px; border-bottom: 1px solid #eee; font-weight: bold;">Intensywność</td>
+                        <td style="padding: 12px 15px; border-bottom: 1px solid #eee;">
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 80%; background: #f1f1f1; height: 10px; border-radius: 5px;">
+                                    <div style="width: 90%; height: 100%; background: #9b59b6; border-radius: 5px;"></div>
+                                </div>
+                                <span style="margin-left: 10px; color: #9b59b6; font-weight: bold;">9/10</span>
                             </div>
-                            <span class="bar-value" style="color: #9b59b6;">9/10</span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="characteristic-name">Trwałość</td>
-                    <td>
-                        <div class="characteristic-bar">
-                            <div class="bar-container">
-                                <div class="bar" style="width: 80%; background: #f39c12;"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px 15px; font-weight: bold;">Trwałość</td>
+                        <td style="padding: 12px 15px;">
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 80%; background: #f1f1f1; height: 10px; border-radius: 5px;">
+                                    <div style="width: 70%; height: 100%; background: #f39c12; border-radius: 5px;"></div>
+                                </div>
+                                <span style="margin-left: 10px; color: #f39c12; font-weight: bold;">7/10</span>
                             </div>
-                            <span class="bar-value" style="color: #f39c12;">8/10</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="product-features">
+                <h2 class="details-title">Dlaczego pokochasz ten zapach?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
                         </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        
-        <div class="product-features">
-            <h2 class="details-title">Dlaczego pokochasz ten zapach?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
+                        <h3 class="feature-title">Długotrwałość</h3>
+                        <p class="feature-desc">Zapach utrzymuje się na skórze przez 6-8 godzin, stopniowo odsłaniając różne warstwy kompozycji.</p>
                     </div>
-                    <h3 class="feature-title">Długotrwałość</h3>
-                    <p class="feature-desc">Intensywna kompozycja utrzymuje się na skórze 8-12 godzin</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-alt"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Uniwersalność</h3>
+                        <p class="feature-desc">Idealny wybór na różne okazje:
+                            Wiosna/Lato: Owocowe nuty doskonale komponują się z letnimi upałami.
+                            Jesień/Zima: Ciepłe akcenty drewniane pasują do chłodniejszych dni.</p>
                     </div>
-                    <h3 class="feature-title">Uniwersalność</h3>
-                    <p class="feature-desc">Idealny na każdą porę roku – od letnich wieczorów po zimowe randki</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-gem"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="feature-title">Energetyczna świerzość</h3>
+                        <p class="feature-desc">Połączenie cytrusów i mięty daje natychmiastowy zastrzyk energii i witalności.</p>
                     </div>
-                    <h3 class="feature-title">Luksusowa jakość</h3>
-                    <p class="feature-desc">Kompozycja stworzona z najwyższej jakości składników</p>
                 </div>
             </div>
         </div>
-    </div> 
-
+    </div>
+    
     <script>
         // Obsługa wyboru pojemności
         const sizeButtons = document.querySelectorAll('.size-btn');
@@ -689,7 +711,7 @@
             const activeButton = document.querySelector('.size-btn.active');
             const price = activeButton.getAttribute('data-price');
             const size = activeButton.getAttribute('data-size');
-            const productName = 'VERSACE EROS EDP';
+            const productName = 'VERSACE EROS ENERGY EDP';
             
             // Pobierz aktualny koszyk z localStorage
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -708,7 +730,7 @@
                     price: parseFloat(price),
                     size: size,
                     quantity: 1,
-                    img: 'versaceeros.jpg' // Ścieżka do obrazka
+                    img: 'versaceerosenergy.jpg' // Ścieżka do obrazka
                 });
             }
             
